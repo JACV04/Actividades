@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF -8>
+    <meta http-equiv= "X-UA-Compatible" content="IE_edge">
+    <meta name="viewport" content="width=divace-width, inicial-scale=1.0">
+    <link rel="stylesheet" href="stilos.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="title">Registro</div>
+        <form id="form-validation" novalidate>
+        <form action="#">
+           <div class="form-grup">
+            <span>Nombre</span>
+            <input type="text" placeholder="Ingrese Nombre" required>
+            <small>Por favor ingrsa el Nombre</small>
+           </div>
+            <div class="form-grup">
+            <span>Apellido</span>
+            <input type="text" placeholder="Ingrese Apellido" required>
+             <small>Por favor ingrsa el Apellido</small>
+           </div>
+            <div class="form-grup">
+            <span>Fecha de nacimiento</span>
+            <input type="date" placeholder="Ingrese Fecha de nacimiento" required>
+             <small>Por favor ingresa la fecha de nacimiento</small>
+           </div>
+            <div class="form-grup">
+            <span>Genero</span>
+            <input type="radio" id="Masculino" name="genero" value="M" required>
+            <label for="Masculino">Masculino</label>
+
+            <input type="radio" id="Femenino" name="genero" value="F" required>
+            <label for="Femenino">Femenino</label>
+
+            <input type="radio" id="Otro" name="genero" value="0" required>
+            <label for="Otro">Otro</label>
+
+
+           </div>
+            <div class="form-grup">
+            <span>Correo Electronico</span>
+            <input type="email" placeholder="Ingrese Correo Electronico" required>
+            <small>Por favor ingrsa el Correo Electronico</small>
+           </div>
+            <div class="form-grup">
+            <span>Numero Telefonico</span>
+            <input type="tel" placeholder="Ingrese Numero de Telefonico" required>
+             <small>Por favor ingrsa el Numero Telefonico</small>
+           </div>
+            <div class="form-grup">
+            <span>Dirrección</span>
+            <textarea placeholder="Ingrese Dirección" rowa="4"></textarea>
+           </div>
+            <div class="form-grup">
+            <span>Nombre de Usuario</span>
+            <input type="text" placeholder="Ingrese Nombree de Usuario" required>
+             <small>Por favor ingrsa el nombre de Usuario</small>
+           </div>
+            <div class="form-grup">
+            <span>Contraseña</span>
+            <input type="password" placeholder="Ingrese Contraseña" required>
+             <small>Por favor ingrsa la Contraseña</small>
+           </div>
+            <div class="form-grup">
+            <span>Confirmar Contraseña</span>
+            <input type="password" placeholder="Confirmar Contraseña" required>
+             <small>Por favor confirme la Contraseña</small>
+           </div>
+
+           <label for="aceptarTerminos">
+            <input type="checkbox" id="aceptarTerminos" name="terminos" value="si" required>
+            Acepto los terminos y condiciones.
+           </label>
+
+           <div class="button">
+            <input type="submit" value="Registrarse">
+           </div>
+           
+           </div>
+
+        </form>
+    </div>
+
+    <script>
+        const addForm = document.getElementById
+        ("form-validation");
+        addForm.addEventListener("submit",(e)=>{
+            if(addForm.checkValidity() ===false){
+                e.preventDefault();
+                e.stopPropagation();
+                addForm.classList.add('was-validate');
+                return false
+            }
+        })
+    </script>
+</body>
+</html>
