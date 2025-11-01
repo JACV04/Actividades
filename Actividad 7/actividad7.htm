@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="principal">
+        <h1>Bienvenido a la Página Principal</h1>
+        <p>Selecciona una opción:</p>
+        <button onclick="mostrarSeccion('conversion')">Conversión de Unidades (mm, cm, m)</button>
+        <button onclick="mostrarSeccion('empresas')">Gestión de Empresas</button>
+    </div>
+
+    <div id="conversion" style="display: none;">
+        <h1>Conversión de Unidades</h1>
+        <form id="conversionForm">
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" step="0.01" required>
+            
+            <label for="unidadOrigen">Unidad de Origen:</label>
+            <select id="unidadOrigen">
+                <option value="mm">Milímetros (mm)</option>
+                <option value="cm">Centímetros (cm)</option>
+                <option value="m">Metros (m)</option>
+            </select>
+            
+            <label for="unidadDestino">Unidad de Destino:</label>
+            <select id="unidadDestino">
+                <option value="mm">Milímetros (mm)</option>
+                <option value="cm">Centímetros (cm)</option>
+                <option value="m">Metros (m)</option>
+            </select>
+            
+            <button type="button" onclick="convertir()">Convertir</button>
+        </form>
+        <div id="resultado"></div>
+        <button onclick="mostrarSeccion('principal')">Volver al Inicio</button>
+    </div>
+
+    <div id="empresas" style="display: none;">
+        <h1>Gestión de Empresas</h1>
+        <form id="empresaForm">
+            <label for="folio">Folio:</label>
+            <input type="text" id="folio" required>
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" required>
+            
+            <button type="button" onclick="agregarEmpresa()">Agregar Empresa</button>
+        </form>
+        <h2>Lista de Empresas</h2>
+        <ul id="listaEmpresas"></ul>
+        <button onclick="mostrarSeccion('principal')">Volver al Inicio</button>
+    </div>
+
+    <script>
+        function mostrarSeccion(seccion) {
+            document.getElementById('principal').style.display = 'none';
+            document.getElementById('conversion').style.display = 'none';
+            document.getElementById('empresas').style.display = 'none';
+            document.getElementById(seccion).style.display = 'block';
+        }
+    </script>
+    <script src="Calculos.js"></script>
+</body>
+</html>
