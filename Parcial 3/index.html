@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registro</div>
+        <form id="form-validation" novalidate>
+           <div class="form-group">
+            <span>Nombre</span>
+            <input type="text" placeholder="Ingrese Nombre" required>
+            <small>Por favor ingresa el Nombre</small>
+           </div>
+            <div class="form-group">
+            <span>Apellido</span>
+            <input type="text" placeholder="Ingrese Apellido" required>
+             <small>Por favor ingresa el Apellido</small>
+           </div>
+            <div class="form-group">
+            <span>Fecha de nacimiento</span>
+            <input type="date" placeholder="Ingrese Fecha de nacimiento" required>
+             <small>Por favor ingresa la fecha de nacimiento</small>
+           </div>
+            <div class="form-group">
+            <span>Areas De Interes</span>
+            <input type="radio" id="Programacion" name="interes" value="Programacion" required>
+            <label for="Programacion">Programación</label>
+
+            <input type="radio" id="DisenoWeb" name="interes" value="DisenoWeb" required>
+            <label for="DisenoWeb">Diseño Web</label>
+
+            <input type="radio" id="Ciencias" name="interes" value="Ciencias" required>
+            <label for="Ciencias">Ciencias</label>
+           </div>
+            <div class="form-group">
+            <span>Correo Electrónico</span>
+            <input type="email" placeholder="Ingrese Correo Electrónico" required>
+            <small>Por favor ingresa el Correo Electrónico</small>
+           </div>
+            <div class="form-group">
+            <span>Número Telefónico</span>
+            <input type="tel" placeholder="Ingrese Número de Teléfono" required>
+             <small>Por favor ingresa el Número Telefónico</small>
+           </div>
+            <div class="form-group">
+            <span>Dirección</span>
+            <textarea placeholder="Ingrese Dirección" rows="4"></textarea>
+           </div>
+            <div class="form-group">
+            <span>Nombre de Usuario</span>
+            <input type="text" placeholder="Ingrese Nombre de Usuario" required>
+             <small>Por favor ingresa el nombre de Usuario</small>
+           </div>
+            <div class="form-group">
+            <span>Contraseña</span>
+            <input type="password" placeholder="Ingrese Contraseña" required>
+             <small>Por favor ingresa la Contraseña</small>
+           </div>
+            <div class="form-group">
+            <span>Confirmar Contraseña</span>
+            <input type="password" placeholder="Confirmar Contraseña" required>
+             <small>Por favor confirma la Contraseña</small>
+           </div>
+
+           <label for="aceptarTerminos">
+            <input type="checkbox" id="aceptarTerminos" name="terminos" value="si" required>
+            Acepto los términos y condiciones.
+           </label>
+
+           <div class="button">
+            <input type="submit" value="Agregar">
+           </div>
+        </form>
+    </div>
+
+    <div class="container" id="seleccion-libros" style="display: none;">
+        <div class="title">Seleccionar Libro para Pedido</div>
+        <form id="form-calculo">
+            <div class="form-group">
+                <span>Nombre del Libro</span>
+                <select id="libro" required>
+                    <option value="">Selecciona un libro</option>
+                    <option value="450.00">Introducción a la Programación - $450.00 MXN</option>
+                    <option value="550.00">Diseño Web Avanzado - $550.00 MXN</option>
+                    <option value="650.00">Ciencias de Datos - $650.00 MXN</option>
+                    <option value="350.00">Historia de la Tecnología - $350.00 MXN</option>
+                </select>
+                <small>Selecciona un libro</small>
+            </div>
+            <div class="form-group">
+                <span>Precio (solo números con hasta dos decimales)</span>
+                <input type="number" id="precio" step="0.01" min="0" placeholder="0.00" required>
+                <small>Ingresa el precio</small>
+            </div>
+            <div class="form-group">
+                <span>IVA</span>
+                <select id="iva" required>
+                    <option value="0.16">General (16%)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Resultado (Precio con IVA)</span>
+                <input type="text" id="resultado" readonly>
+            </div>
+            <div class="button">
+                <button type="button" id="calcular">Calcular</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
